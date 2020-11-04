@@ -13,9 +13,7 @@
   "scripts": {
     "test": "jest --config jestconfig.json --detectOpenHandles --forceExit",
     "build": "tsc",
-    "prebuild": "npm run lint",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
