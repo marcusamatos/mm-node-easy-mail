@@ -1,14 +1,29 @@
 {
   "name": "mm-node-easy-mail",
+  "description": "Easy way to send e-mail with nodejs application.",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "author": {
+    "name": "Marcus Matos",
+    "email": "marcusamatos@gmail.com",
+    "url": "https://marcusmatos.com.br"
+  },
   "scripts": {
     "build": "tsc",
     "prebuild": "npm run lint",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts"
+    "lint:fix": "eslint src/**/*.ts",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusamatos/mm-node-easy-mail.git"
   },
   "dependencies": {
     "aws-sdk": "^2.784.0",
